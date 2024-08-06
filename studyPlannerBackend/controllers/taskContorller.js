@@ -80,8 +80,8 @@ const toggleTask = async (req, res) => {
   try {
     const { user_id, task_Id,status } = req.body;
 
-    if (!user_id || !task_Id  ||!status           ) {
-      return res.status(400).json({ error: 'user_id and task_Id are required' });
+    if (!user_id || !task_Id            ) {
+      return res.status(400).json({ error: 'All fields are required' });
     }
 
     if (!req.headers.authorization) {
